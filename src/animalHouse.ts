@@ -17,11 +17,13 @@ export class AnimalHouse {
     addAnimal() {
         try {
             this.errorMessage = "";
-            if (this.newAnimal.length === 0 || this.newAnimal.trim()==="")
+            if (this.newAnimal.length === 0 || this.newAnimal.trim() === "")
                 //checks that newAnimal is not blank and contains characters other than whitespace
                 throw 'The new animal\'s name cannot be blank.';
             if (this.newAnimal === null)
                 throw 'The new animal is null.';
+            if (this.animalExists(this.newAnimal))
+                throw 'That animal already exists.';
             this.animals.push(new Animal(this.newAnimal));
             this.$log.log('New animal pushed. ' + this.animals[this.animals.length - 1].name);
         }
@@ -29,6 +31,13 @@ export class AnimalHouse {
             this.$log.log('Error logged: ' + err);
             this.errorMessage = "Error: " + err;
         }
+    }
+    animalExists(newAnimal) {
+        for (let i = 0; i < this.animals.length; i++) {
+            if (newAnimal === this.animals[i].name)
+                return true;
+        }
+        return false;
     }
 }
 AnimalHouse.$inject = ['$log']
