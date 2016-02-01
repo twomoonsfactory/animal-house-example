@@ -47,3 +47,4 @@ Also, there is an article in [angular-tips](http://angular-tips.com/blog/2015/06
 ## License
 
 The license of this workflow is MIT.
+"# animal-house-example" 
