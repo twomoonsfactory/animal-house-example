@@ -32,7 +32,7 @@ module.exports = function makeWebpackConfig (options) {
     config.entry = {}
   } else {
     config.entry = {
-      app: './src/app.js'
+      app: './src/app.ts'
     }
   }
 
@@ -86,7 +86,13 @@ module.exports = function makeWebpackConfig (options) {
   // Initialize module
   config.module = {
     preLoaders: [],
-    loaders: [{
+    loaders: [
+    {
+        // Typescript Loader
+        test: /\.ts$/,
+        loader: 'babel-loader!ts-loader',
+        exclude: /node_modules/
+    }, {
       // JS LOADER
       // Reference: https://github.com/babel/babel-loader
       // Transpile .js files using babel-loader

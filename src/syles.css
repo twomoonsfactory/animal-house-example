@@ -1,0 +1,10 @@
+.dietTable{
+    border: #000000;
+    border-width: 1px;    
+}
+.tableHead{
+    font-weight: bold;
+}
+.columnHead{
+    text-decoration: underline;
+}
