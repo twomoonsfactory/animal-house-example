@@ -1,5 +1,5 @@
 import {AnimalHouse} from './animalHouse.ts';
-// require('./styles.css');
+import './styles.css';
 
 export class AnimalDietTracker implements ng.IDirective {
     constructor() {

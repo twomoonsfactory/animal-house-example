@@ -8,3 +8,7 @@
 .columnHead{
     text-decoration: underline;
 }
+.error{
+    color: #990000;
+    font-style: italic;
+}

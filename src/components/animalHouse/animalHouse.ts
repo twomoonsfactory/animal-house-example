@@ -6,8 +6,10 @@ export class AnimalHouse {
     private newAnimal: string = "";
     private $log: any;
     private errorMessage: string;
-    constructor($log) {
+    private animalService: any;
+    constructor($log, animalService) {
         this.$log = $log;
+        this.animalService = animalService;
         this.$log.log('initialized');
         for (let i = 0; i < this.animalList.length; i++) {
             this.animals.push(new Animal(this.animalList[i]));
@@ -25,7 +27,9 @@ export class AnimalHouse {
             if (this.animalExists(this.newAnimal))
                 throw 'That animal already exists.';
             this.animals.push(new Animal(this.newAnimal));
+            this.animalService.addAnimal(this.newAnimal);
             this.$log.log('New animal pushed. ' + this.animals[this.animals.length - 1].name);
+            this.newAnimal = "";
         }
         catch (err) {
             this.$log.log('Error logged: ' + err);
@@ -40,4 +44,4 @@ export class AnimalHouse {
         return false;
     }
 }
-AnimalHouse.$inject = ['$log']
+AnimalHouse.$inject = ['$log', 'animalService']
