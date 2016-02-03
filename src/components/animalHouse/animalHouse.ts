@@ -27,7 +27,7 @@ export class AnimalHouse {
             if (this.animalExists(this.newAnimal))
                 throw 'That animal already exists.';
             this.animals.push(new Animal(this.newAnimal));
-            this.animalService.addAnimal(this.newAnimal);
+            this.animalService.addAnimal({name: this.newAnimal});
             this.$log.log('New animal pushed. ' + this.animals[this.animals.length - 1].name);
             this.newAnimal = "";
         }

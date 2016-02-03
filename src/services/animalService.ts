@@ -11,7 +11,7 @@ export class AnimalService {
         var deferred = this.$q.defer();
         this.$http({
             method: "GET",
-            url: '/api/animals'
+            url: 'http://localhost:5001/api/animals'
         }).then(function(response) {
             deferred.resolve(response.data);
             this.$log.log("Animals Retrieved");
@@ -23,10 +23,11 @@ export class AnimalService {
     //getAnimalsWeek
     //getAnimalsMonth
     addAnimal(animal) {
+        this.$log.log(animal);
         var deferred = this.$q.defer();
         this.$http({
             method: "POST",
-            url: '/api/animal/' + animal
+            url: 'http://localhost:5001/api/animal/' + animal
         }).then(function(response){
             deferred.resolve(response.data);
             this.$log.log(animal + " added");
