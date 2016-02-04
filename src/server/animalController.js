@@ -1,5 +1,4 @@
-var Animal = require('./Animal'),
-    DietHistory = require('./DietHistory');
+var Animal = require('./Animal');
     
 module.exports = {
     //get all animals and history
@@ -15,11 +14,24 @@ module.exports = {
     //get the rolling month's information
     //add a new animal
     addAnimal: function(req, res) {
-        var newAnimal = new Animal(req.params.animal)
-        .save(function(err, animal) {
-            if (err) return res.status(500).send(err);
-            else res.send(animal);
+        console.log(req.body);
+        var newAnimal = Animal(req.body);
+        newAnimal.save(function(err){
+            if(err) throw err;
+            console.log(newAnimal.name + 'added');
+        })
+    },
+    //add a child eaten (check if history exists for today and increment if so)
+    childEaten: function(req, res) {
+        var today = new Date();
+        var query = {name: req.body.name, species: req.body.species};
+        var update = {$push: {'history': {year: today.getFullYear(), month: today.getMonth()+1, day: today.getDate()}}};
+        Animal.findOneAndUpdate(query, update, function(err, animal){
+            if (err){
+              console.log(err + " " + animal);
+              return res.status(501).send(err);  
+            }
+            console.log(animal);
         });
     }
-    //add a child eaten (check if history exists for today and increment if so)
 }

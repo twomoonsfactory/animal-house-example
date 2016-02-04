@@ -1,11 +1,15 @@
-export class Animal{
+export class Animal {
     name: string
     childrenEaten: number
-    constructor(newName: string){
+    species: string
+    history: any
+    constructor(newName: string, newSpecies: string, newHistory: any) {
         this.name = newName
-        this.childrenEaten = 0 
+        this.species = newSpecies
+        this.childrenEaten = 0
+        this.history = newHistory
     }
-    ateKid(){
+    ateKid() {
         this.childrenEaten++
     }
 }

@@ -14,26 +14,32 @@ export class AnimalService {
             url: 'http://localhost:5001/api/animals'
         }).then(function(response) {
             deferred.resolve(response.data);
-            this.$log.log("Animals Retrieved");
         });
         return deferred.promise;
     }
-    //getAnimalsToday
-    //getAnimalsYesterday
-    //getAnimalsWeek
-    //getAnimalsMonth
     addAnimal(animal) {
         this.$log.log(animal);
         var deferred = this.$q.defer();
         this.$http({
             method: "POST",
-            url: 'http://localhost:5001/api/animal/' + animal
+            url: 'http://localhost:5001/api/addAnimal',
+            data: animal
         }).then(function(response){
             deferred.resolve(response.data);
-            this.$log.log(animal + " added");
+            this.$log.log(animal.name + " added");
         });
         return deferred.promise;
     }
-    //childEaten
+    childEaten(animal) {
+        var deferred = this.$q.defer();
+        this.$http({
+            method: "POST",
+            url: 'http://localhost:5001/api/childEaten',
+            data: animal
+        }).then(function(){
+            this.$log.log(animal.name + " ate a kid");
+        });
+    }
+    
 }
 AnimalService.$inject = ['$q', '$http', '$log']

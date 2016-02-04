@@ -6,4 +6,4 @@ var dietHistorySchema = new Schema({
     childrenEaten: {type: Number, min: 1}
 });
 
-module.exports = mongoose.model('DietHistory', dietHistorySchema);
+module.exports = dietHistorySchema;
