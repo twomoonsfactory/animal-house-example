@@ -21,8 +21,8 @@ module.exports = {
             console.log(newAnimal.name + 'added');
         })
     },
-    //add a child eaten (check if history exists for today and increment if so)
-    childEaten: function(req, res) {
+    //add a pizza eaten (check if history exists for today and increment if so)
+    pizzaEaten: function(req, res) {
         var today = new Date();
         var query = {name: req.body.name, species: req.body.species};
         var update = {$push: {'history': {year: today.getFullYear(), month: today.getMonth()+1, day: today.getDate()}}};

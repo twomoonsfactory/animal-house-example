@@ -30,14 +30,14 @@ export class AnimalService {
         });
         return deferred.promise;
     }
-    childEaten(animal) {
+    pizzaEaten(animal) {
         var deferred = this.$q.defer();
         this.$http({
             method: "POST",
-            url: 'http://localhost:5001/api/childEaten',
+            url: 'http://localhost:5001/api/pizzaEaten',
             data: animal
         }).then(function(){
-            this.$log.log(animal.name + " ate a kid");
+            this.$log.log(animal.name + " ate a pizza");
         });
     }
     

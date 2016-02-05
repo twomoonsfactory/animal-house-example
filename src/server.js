@@ -26,7 +26,7 @@ app.get('/api/animals', animalController.getAllAnimals);
 // app.get('/api/animalsWeek', animalController.getWeek);
 // app.get('/api/animalsMonth', animalController.getMonth);
 app.post('/api/addAnimal', animalController.addAnimal);
-app.post('/api/childEaten', animalController.childEaten);
+app.post('/api/pizzaEaten', animalController.pizzaEaten);
 
 
 // Connections

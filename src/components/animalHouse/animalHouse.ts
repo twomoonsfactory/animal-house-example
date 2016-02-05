@@ -26,7 +26,7 @@ export class AnimalHouse {
             for (let animal of newAnimals)
                 for(let incident of animal.history)
                     if(incident.year === today.year && incident.month === today.month && incident.day === today.day)
-                        animal.ateKid();
+                        animal.atePizza();
         });
         this.$log.log('animals loaded');
         this.animals = newAnimals;
@@ -58,9 +58,9 @@ export class AnimalHouse {
         }
         return false;
     }
-    childEaten(eatingAnimal) {
-        this.animalService.childEaten(eatingAnimal);
-        eatingAnimal.ateKid();
+    pizzaEaten(eatingAnimal) {
+        this.animalService.pizzaEaten(eatingAnimal);
+        eatingAnimal.atePizza();
         let d = new Date();
         eatingAnimal.history.push({year: d.getFullYear(), month: d.getMonth() + 1, day: d.getDate()});
     }

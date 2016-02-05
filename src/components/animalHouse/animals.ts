@@ -1,15 +1,15 @@
 export class Animal {
     name: string
-    childrenEaten: number
+    pizzasEaten: number
     species: string
     history: any
     constructor(newName: string, newSpecies: string, newHistory: any) {
         this.name = newName
         this.species = newSpecies
-        this.childrenEaten = 0
+        this.pizzasEaten = 0
         this.history = newHistory
     }
-    ateKid() {
-        this.childrenEaten++
+    atePizza() {
+        this.pizzasEaten++
     }
 }
