@@ -1,7 +1,7 @@
 {
-  "name": "angular-webpack-workflow",
+  "name": "animal-house-example",
   "version": "1.0.0",
-  "description": "A workflow for Angular made with Webpack",
+  "description": "An example of Angular1 using Typescript/ES6 getting ready for Angular2",
   "scripts": {
     "build": "webpack --config webpack.build.js --bail -p",
     "dev": "webpack-dev-server --history-api-fallback --inline --progress",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Foxandxss/angular-webpack-workflow.git"
+    "url": "https://github.com/twomoonsfactory/animal-house-example"
   },
-  "author": "Jesus Rodriguez",
+  "author": "AJ Larson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Foxandxss/angular-webpack-workflow/issues"
+    "url": "https://github.com/twomoonsfactory/animal-house-example/issues"
   },
-  "homepage": "https://github.com/Foxandxss/angular-webpack-workflow",
+  "homepage": "https://github.com/twomoonsfactory/animal-house-example",
   "dependencies": {
     "angular": "^1.4.8",
     "body-parser": "^1.14.2",

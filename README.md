@@ -1,31 +1,36 @@
-# Angular 1.x WebPack + Babel workflow
+# Animal House Example
+## An example of Angular1 using Typescript/ES6 getting ready for Angular2
 
-[![Dependency Status](https://david-dm.org/Foxandxss/angular-webpack-workflow/status.svg)](https://david-dm.org/Foxandxss/angular-webpack-workflow#info=dependencies) [![devDependency Status](https://david-dm.org/Foxandxss/angular-webpack-workflow/dev-status.svg)](https://david-dm.org/Foxandxss/angular-webpack-workflow#info=devDependencies)
 
-This workflow serves as a starting point for building Angular 1.x applications using WebPack. Should be noted that apart from the pre-installed angular package, this workflow is pretty much generic.
+This example is meant to show component style architecture in a functional Angular 1.X application.
 
-It is a direct port of the amazing [react workflow](https://github.com/cesarandreu/web-app) of [Cesar Andreu](https://github.com/cesarandreu). All the credits goes for him.
 
 ## Features
 
-* Heavily commented webpack configuration with reasonable defaults.
+* Uses Typescript via Typescript Loader
 * ES6, and ES7 support with babel.js.
-* Source maps included in all builds.
-* Development server with live reload.
-* Production builds with cache busting and asset minification.
-* Testing environment using karma to run tests and jasmine as the framework.
-* Code coverage when tests are run.
+* All the lovely features from the workflow I forked to create this: https://github.com/Foxandxss/angular-webpack-workflow
 * No gulp and no grunt, just npm run-scripts.
+* Runs to a Node Express background with MongoDB.
 
-## Installation
+## Client Installation
 
 To use it, just clone this repo and install the npm dependencies:
 
 ```shell
-$ git clone https://github.com/Foxandxss/angular-webpack-workflow my_app
+$ git clone https://github.com/twomoonsfactory/animal-house-example my_app
 $ cd my_app
 $ npm install
 ```
+
+## Server Installation
+
+The server should have been downloaded with the rest of the repo -- but make sure to have installed MongoDB previously.
+
+## Start the Server
+
+* Run MongoDB
+* In Command Prompt or Terminal, navigate to the repo's source folder, and enter "node server.js" -- this will start the server and connect the DB.
 
 ## Scripts
 
@@ -36,13 +41,9 @@ All scripts are run with `npm run [script]`, for example: `npm run test`.
 * `test` - run all tests
 * `test:live` - continuously run unit tests watching for changes
 
+* Note, for dev server, api calls to the DB in the service will need to be aimed directly to 'http://localhost:5001/'
+
 See what each script does by looking at the `scripts` section in [package.json](./package.json).
-
-## Example and tutorial
-
-To see how to structure an Angular 1.x application using this workflow, please check [this demo](https://github.com/Foxandxss/GermanWords-ng1-webpack).
-
-Also, there is an article in [angular-tips](http://angular-tips.com/blog/2015/06/using-angular-1-dot-x-with-es6-and-webpack/)
 
 ## License
 

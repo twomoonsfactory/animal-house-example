@@ -2,7 +2,7 @@
     <thead>
         <tr>
             <td class="tableHead" colspan=4>
-                Animal Dietary Tracker
+                <h2>Animal Dietary Tracker</h2>
             </td>
         </tr>
         <tr>
@@ -20,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="animal in animalHouse.animals">
+        <tr ng-repeat="animal in animalHouse.animals | orderBy : 'species'">
             <td>
                 {{animal.name}}
             </td>
@@ -30,8 +30,8 @@
             <td>
                 {{animal.pizzasEaten}}
             </td>
-            <td>
-                <button ng-click="animalHouse.pizzaEaten(animal)">Ate A Pizza</button>
+            <td class="buttonCell">
+                <button ng-click="animalHouse.pizzaEaten(animal)"><i class="fa fa-plus"></i>&nbsp<i class="fa fa-cutlery"></i></button>
             </td>
         </tr>
     </tbody>
@@ -44,11 +44,13 @@
                 <input type="text" placeholder="New Animal Species" ng-model="animalHouse.newAnimal.species"></input>
             </td>
             <td>
-                <button ng-click="animalHouse.addAnimal()">Add Animal</button>
+                <button ng-click="animalHouse.addAnimal()"><i class="fa fa-plus"></i>&nbspAnimal</button>
             </td>
         </tr>
-        <tr colspan=4>
-            <span class="error">{{animalHouse.errorMessage}}</span>
+        <tr>
+            <td colspan=4>
+                <span class="error">{{animalHouse.errorMessage}}</span>
+            </td>
         </tr>
     </tfoot>
 </table>

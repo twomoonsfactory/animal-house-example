@@ -1,9 +1,22 @@
+.dietTable td{
+    padding: 6px;
+}
 .dietTable{
-    border: #000000;
-    border-width: 1px;    
+    border: none;
+    border-collapse: collapse;
+}
+.dietTable tbody tr:nth-child(odd){
+    background-color: #3CB371;
+}
+.dietTable input{
+    width: 80%;
+}
+.buttonCell{
+    background-color: #FFFFFF;
 }
 .tableHead{
-    font-weight: bold;
+    background-image: url('assets/background.jpg');
+    background-size: 100% 100%;
 }
 .columnHead{
     text-decoration: underline;
