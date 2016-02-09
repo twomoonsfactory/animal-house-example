@@ -8,7 +8,7 @@ export class AnimalService {
     getAnimals() {
         return this.$http({
             method: 'GET',
-            url: 'http://localhost:5001/api/animals'
+            url: '/api/animals'
         }).then(function(response) {
             return response.data;
         });
@@ -17,7 +17,7 @@ export class AnimalService {
         this.$log.log('posting' + animal);
         return this.$http({
             method: 'POST',
-            url: 'http://localhost:5001/api/addAnimal',
+            url: '/api/addAnimal',
             data: animal
         }).then(function(response){
             return response.data;
@@ -26,7 +26,7 @@ export class AnimalService {
     pizzaEaten(animal) {
         return this.$http({
             method: 'POST',
-            url: 'http://localhost:5001/api/pizzaEaten',
+            url: '/api/pizzaEaten',
             data: animal
         }).then(function(){
             this.$log.log(animal.name + ' ate a pizza');

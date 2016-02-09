@@ -30,13 +30,15 @@ The server should have been downloaded with the rest of the repo -- but make sur
 ## Start the Server
 
 * Run MongoDB
-* In Command Prompt or Terminal, navigate to the repo's source folder, and enter "node server.js" -- this will start the server and connect the DB.
+* In Command Prompt or Terminal, navigate to the repo's source folder, and enter `node server.js` -- this will start the server and connect the DB.
+* The server will serve up the contents of the `public` folder, which contains the result of the `build` script.
+* This is served to `http://localhost:5001`
 
 ## Scripts
 
 All scripts are run with `npm run [script]`, for example: `npm run test`.
 
-* `build` - generate a minified build to dist folder
+* `build` - generate a minified build to dist folder, `public`
 * `dev` - start development server, try it by opening `http://localhost:8080/`
 * `test` - run all tests
 * `test:live` - continuously run unit tests watching for changes

@@ -17,7 +17,7 @@ var animalController = require('./server/animalController');
 app.use(bodyParser.json());
 app.use(cors());
 // Serve public directory
-app.use(express.static('./public'));
+app.use(express.static('../public'));
 
 // Endpoints
 app.get('/api/animals', animalController.getAllAnimals);
