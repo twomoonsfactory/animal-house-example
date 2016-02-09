@@ -44,8 +44,3 @@ All scripts are run with `npm run [script]`, for example: `npm run test`.
 * Note, for dev server, api calls to the DB in the service will need to be aimed directly to 'http://localhost:5001/'
 
 See what each script does by looking at the `scripts` section in [package.json](./package.json).
-
-## License
-
-The license of this workflow is MIT.
-"# animal-house-example" 
