@@ -32,7 +32,7 @@ The server will have been downloaded with the rest of the repo -- but make sure 
 * Run MongoDB
 * In Command Prompt or Terminal, navigate to the repo's `src` folder, and enter `node server.js` -- this will start the server and connect the DB
 * The server will serve up the contents of the `public` folder, which contains the result of the `build` script
-* This is served to `http://localhost:5001`
+* This listens at `http://localhost:8080`
 
 ## Scripts
 
@@ -43,6 +43,6 @@ All scripts are run with `npm run [script]`, for example: `npm run test`
 * `test` - run all tests
 * `test:live` - continuously run unit tests watching for changes
 
-* Note, for dev server, api calls to the DB in the service will need to be aimed directly to `http://localhost:5001/` or they will not communicate with the server
+* Note, for dev server, api calls to the DB in the service will need to be aimed directly to `http://localhost:8080/` or they will not communicate with the server (this is the default)
 
 See what each script does by looking at the `scripts` section in [package.json](./package.json)
