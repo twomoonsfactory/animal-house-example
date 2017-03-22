@@ -1,6 +1,6 @@
 // setting the correct environment
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-var port = process.env.PORT || 5001;
+var port = process.env.PORT || 8080;
 
 // node modules
 var express = require('express'),
